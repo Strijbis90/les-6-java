@@ -5,8 +5,7 @@ const departments = {
         jobs: [
             {
                 title: "Marketingmanager",
-                description: "De marketingmanager is verantwoordelijk voor het ontwikkelen en implementeren van marketingstrategieën om de producten of diensten van een bedrijf te promoten. Ze houden toezicht op marktonderzoek, reclamecampagnes en initiatieven voor klantenwerving. Ze analyseren markttrends, identificeren doelgroepen en werken samen met interdisciplinaire teams om marketingdoelen te bereiken en bedrijfsgroei te stimuleren."
-            },
+                description: "De marketingmanager is verantwoordelijk voor het ontwikkelen en implementeren van marketingstrategieën om de producten of diensten van een bedrijf te promoten. Ze houden toezicht op marktonderzoek, reclamecampagnes en initiatieven voor klantenwerving. Ze analyseren markttrends, identificeren doelgroepen en werken samen met interdisciplinaire teams om marketingdoelen te bereiken en bedrijfsgroei te stimuleren."},
             {
                 title: "Digital Marketing Specialist",
                 description: "Een Digital Marketing Specialist richt zich op online marketingactiviteiten om de zichtbaarheid van het merk, websiteverkeer en klantbetrokkenheid te vergroten. Ze maken gebruik van verschillende digitale kanalen zoals sociale media, e-mailmarketing, zoekmachineoptimalisatie (SEO) en betaalde advertenties (PPC). Ze monitoren de prestaties van campagnes, analyseren gegevens en optimaliseren strategieën om online aanwezigheid te maximaliseren en leads of conversies te genereren."
@@ -88,6 +87,10 @@ if (userInput === "marketing" || userInput === "sales" || userInput === "custome
 3: ${departments[userInput].jobs[3].title}`);
 
     console.log(jobInput);
-} else {
-    console.error("Ongeldige keuze. Probeer het opnieuw door de pagina te verversen.");
-}
+    if (jobInput === "0" || jobInput === "1" || jobInput === "2" || jobInput === "3") {
+        console.log(`Je koos ${departments[userInput].jobs[jobInput].title}. Een uitdagende rol! ${departments[userInput].jobs[jobInput].description}`);
+    } else {
+        console.error("Ongeldige keuze. Probeer het opnieuw door de pagina te verversen.");
+    }}
+document.getElementById("role-title").textContent = "Harry";
+document.getElementById("department-description").textContent = "Pizza";
