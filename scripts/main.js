@@ -5,8 +5,7 @@ const departments = {
         jobs: [
             {
                 title: "Marketingmanager",
-                description: "De marketingmanager is verantwoordelijk voor het ontwikkelen en implementeren van marketingstrategieën om de producten of diensten van een bedrijf te promoten. Ze houden toezicht op marktonderzoek, reclamecampagnes en initiatieven voor klantenwerving. Ze analyseren markttrends, identificeren doelgroepen en werken samen met interdisciplinaire teams om marketingdoelen te bereiken en bedrijfsgroei te stimuleren."
-            },
+                description: "De marketingmanager is verantwoordelijk voor het ontwikkelen en implementeren van marketingstrategieën om de producten of diensten van een bedrijf te promoten. Ze houden toezicht op marktonderzoek, reclamecampagnes en initiatieven voor klantenwerving. Ze analyseren markttrends, identificeren doelgroepen en werken samen met interdisciplinaire teams om marketingdoelen te bereiken en bedrijfsgroei te stimuleren."},
             {
                 title: "Digital Marketing Specialist",
                 description: "Een Digital Marketing Specialist richt zich op online marketingactiviteiten om de zichtbaarheid van het merk, websiteverkeer en klantbetrokkenheid te vergroten. Ze maken gebruik van verschillende digitale kanalen zoals sociale media, e-mailmarketing, zoekmachineoptimalisatie (SEO) en betaalde advertenties (PPC). Ze monitoren de prestaties van campagnes, analyseren gegevens en optimaliseren strategieën om online aanwezigheid te maximaliseren en leads of conversies te genereren."
@@ -70,5 +69,28 @@ const departments = {
         ],
     }
 }
-
 console.log(departments);
+console.log(`De afdeling Sales heeft ${departments.sales.numberOfEmployees} medewerkers`);
+console.log(`Marketing is een leuke afdeling om te werken. ${departments.marketing.description}.`);
+console.log(`De afdeling Customer Service heeft ${departments["customer-service"].numberOfEmployees} medewerkers`);
+console.log(`Sales is een uitdagende afdeling om te werken als Verkoopmanager. ${departments.sales.jobs[1].description}`);
+
+const userInput = prompt("Over welke afdeling wil je meer informatie? Kies uit: [marketing / sales / customer-service]");
+
+if (userInput === "marketing" || userInput === "sales" || userInput === "customer-service") {
+    console.log(`${userInput} is een leuke afdeling om te werken. Er werken op dit moment ${departments[userInput].numberOfEmployees} medewerkers.`);
+
+    const jobInput = prompt(`Je koos ${userInput}. Over welke functie wil je meer weten? Voer een getal tussen 0 en 3 in.
+0: ${departments[userInput].jobs[0].title},
+1: ${departments[userInput].jobs[1].title},
+2: ${departments[userInput].jobs[2].title},
+3: ${departments[userInput].jobs[3].title}`);
+
+    console.log(jobInput);
+    if (jobInput === "0" || jobInput === "1" || jobInput === "2" || jobInput === "3") {
+        console.log(`Je koos ${departments[userInput].jobs[jobInput].title}. Een uitdagende rol! ${departments[userInput].jobs[jobInput].description}`);
+    } else {
+        console.error("Ongeldige keuze. Probeer het opnieuw door de pagina te verversen.");
+    }}
+document.getElementById("role-title").textContent = "Harry";
+document.getElementById("department-description").textContent = "Pizza";
